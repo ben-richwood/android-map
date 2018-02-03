@@ -1,6 +1,8 @@
 import React from 'react';
 import MapboxGL from '@mapbox/react-native-mapbox-gl';
 
+import { Fonts } from './utils/Fonts'
+
 import {
   View,
   Text,
@@ -8,7 +10,32 @@ import {
   StyleSheet,
   Modal,
   TouchableOpacity,
+  Button
 } from 'react-native';
+
+import {
+  setCustomView,
+  setCustomText,
+} from 'react-native-global-props';
+
+// Setting a default background color for all View components.
+const customViewProps = {
+  style: {
+    backgroundColor: '#333333'
+  }
+};
+// Setting default styles for all Text components.
+const customTextProps = {
+  style: {
+    fontSize: 16,
+    // fontFamily: Platform.OS === 'ios' ? 'HelveticaNeue' : 'Roboto',
+    fontFamily: Fonts.Pexico,
+    color: 'black'
+  }
+};
+
+setCustomView(customViewProps);
+setCustomText(customTextProps);
 
 import { Icon } from 'react-native-elements';
 
@@ -201,6 +228,28 @@ class App extends React.Component {
     );
   }
 
+
+  onStartMap () {
+    const item = this.getActiveItem();
+
+    const modalProps = {
+      visible: !!item,
+      transparent: true,
+      animationType: 'slide',
+      onRequestClose: this.onCloseExample,
+    };
+
+    return (
+      <Modal {...modalProps}>
+        <View style={styles.exampleBackground}>
+          {modalProps.visible  ? (
+            <ShowMap key="Map" label="Map" onDismissExample={this.onCloseExample} />
+          ) : null}
+        </View>
+      </Modal>
+    );
+  }
+
   render () {
     if (IS_ANDROID && !this.state.isAndroidPermissionGranted) {
       if (this.state.isFetchingAndroidPermission) {
@@ -220,11 +269,19 @@ class App extends React.Component {
         <MapHeader label="React Native Mapbox GL" />
 
         <View style={sheet.matchParent}>
+          <Button
+            onPress={this.onStartMap}
+            title="Learn More"
+            color="#841584"
+            accessibilityLabel="Learn more about this purple button"
+          />
+          {/*
           <FlatList
             style={styles.exampleList}
             data={Examples}
             keyExtractor={item => item.label}
             renderItem={this.renderItem} />
+            */}
         </View>
 
         {this.renderActiveExample()}

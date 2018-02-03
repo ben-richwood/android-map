@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 24,
     color: colors.secondary.white,
+    // fontFamily: 'PexicoMicro',
   },
   baseHeader: {
     position: 'relative',
@@ -38,8 +39,9 @@ class MapHeader extends React.PureComponent {
 
   static defaultProps = {
     statusBarTextTheme: 'light-content',
+    backgroundColor: '#333333',
     statusBarColor: colors.primary.blueDark,
-    backgroundColor: colors.primary.blue,
+    // backgroundColor: colors.primary.blue,
   };
 
   renderBackIcon () {
