@@ -9,13 +9,14 @@ import exampleIcon from '../assets/example.png';
 // import { onSortOptions } from '../utils';
 
 const styleList = {
-  Termainal: "mapbox://styles/richwood/cjbkiibly17pi2snys9thsau1",
-  Dark: "mapbox://styles/mapbox/dark-v9",
+  Terminal: "mapbox://styles/richwood/cjbkiibly17pi2snys9thsau1",
+  Exploration: "mapbox://styles/richwood/cjcrz5zbq1tkl2rpdctydxeqf",
+  // Dark: "mapbox://styles/mapbox/dark-v9",
   Light: "mapbox://styles/mapbox/light-v9",
-  Outdoors: "mapbox://styles/mapbox/outdoors-v10",
-  Satellite: "mapbox://styles/mapbox/satellite-v9",
+  Street: "mapbox://styles/mapbox/streets-v10",
+  // Satellite: "mapbox://styles/mapbox/satellite-v9",
+  // Outdoors: "mapbox://styles/mapbox/outdoors-v10",
   // SatelliteStreet: "mapbox://styles/mapbox/satellite-streets-v10",
-  // Street: "mapbox://styles/mapbox/streets-v10",
   // TrafficDay: "mapbox://styles/mapbox/traffic-day-v2",
   // TrafficNight: "mapbox://styles/mapbox/traffic-night-v2",
 }

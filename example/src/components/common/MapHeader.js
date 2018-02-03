@@ -39,7 +39,7 @@ class MapHeader extends React.PureComponent {
 
   static defaultProps = {
     statusBarTextTheme: 'light-content',
-    backgroundColor: '#333333',
+    backgroundColor: '#444444',
     statusBarColor: colors.primary.blueDark,
     // backgroundColor: colors.primary.blue,
   };

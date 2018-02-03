@@ -1,16 +1,15 @@
 import React from 'react';
 import MapboxGL from '@mapbox/react-native-mapbox-gl';
+const Platform = require('Platform');
 
 import { Fonts } from './utils/Fonts'
 
 import {
   View,
   Text,
-  FlatList,
   StyleSheet,
   Modal,
   TouchableOpacity,
-  Button
 } from 'react-native';
 
 import {
@@ -21,15 +20,15 @@ import {
 // Setting a default background color for all View components.
 const customViewProps = {
   style: {
-    backgroundColor: colors.terminal,
+    backgroundColor: 'transparent',
   }
 };
 // Setting default styles for all Text components.
 const customTextProps = {
   style: {
     fontSize: 16,
-    // fontFamily: Platform.OS === 'ios' ? 'HelveticaNeue' : 'Roboto',
-    // fontFamily: Fonts.Pexico,
+    fontFamily: Platform.OS === 'ios' ? 'HelveticaNeue' : 'Roboto',
+    // fontFamily: Fonts.proximanova,
     color: 'black'
   }
 };
@@ -52,34 +51,34 @@ import config from './utils/config';
 
 // examples
 import ShowMap from './components/ShowMap';
-import SetPitch from './components/SetPitch';
-import SetBearing from './components/SetBearing';
-import ShowClick from './components/ShowClick';
-import FlyTo from './components/FlyTo';
-import FitBounds from './components/FitBounds';
-import SetUserTrackingModes from './components/SetUserTrackingModes';
-import SetUserLocationVerticalAlignment from './components/SetUserLocationVerticalAlignment';
-import ShowRegionDidChange from './components/ShowRegionDidChange';
+// import SetPitch from './components/SetPitch';
+// import SetBearing from './components/SetBearing';
+// import ShowClick from './components/ShowClick';
+// import FlyTo from './components/FlyTo';
+// import FitBounds from './components/FitBounds';
+// import SetUserTrackingModes from './components/SetUserTrackingModes';
+// import SetUserLocationVerticalAlignment from './components/SetUserLocationVerticalAlignment';
+// import ShowRegionDidChange from './components/ShowRegionDidChange';
 import CustomIcon from './components/CustomIcon';
-import YoYo from './components/YoYo';
-import EarthQuakes from './components/EarthQuakes';
-import GeoJSONSource from './components/GeoJSONSource';
-import WatercolorRasterTiles from './components/WatercolorRasterTiles';
-import TwoByTwo from './components/TwoByTwo';
-import IndoorBuilding from './components/IndoorBuilding';
-import QueryAtPoint from './components/QueryAtPoint';
-import QueryWithRect from './components/QueryWithRect';
-import ShapeSourceIcon from './components/ShapeSourceIcon';
-import CustomVectorSource from './components/CustomVectorSource';
-import ShowPointAnnotation from './components/ShowPointAnnotation';
-import CreateOfflineRegion from './components/CreateOfflineRegion';
-import DriveTheLine from './components/DriveTheLine';
-import ImageOverlay from './components/ImageOverlay';
-import DataDrivenCircleColors from './components/DataDrivenCircleColors';
-import ChoroplethLayerByZoomLevel from './components/ChoroplethLayerByZoomLevel';
-import PointInMapView from './components/PointInMapView';
-import TakeSnapshot from './components/TakeSnapshot';
-import TakeSnapshotWithMap from './components/TakeSnapshotWithMap';
+// import YoYo from './components/YoYo';
+// import EarthQuakes from './components/EarthQuakes';
+// import GeoJSONSource from './components/GeoJSONSource';
+// import WatercolorRasterTiles from './components/WatercolorRasterTiles';
+// import TwoByTwo from './components/TwoByTwo';
+// import IndoorBuilding from './components/IndoorBuilding';
+// import QueryAtPoint from './components/QueryAtPoint';
+// import QueryWithRect from './components/QueryWithRect';
+// import ShapeSourceIcon from './components/ShapeSourceIcon';
+// import CustomVectorSource from './components/CustomVectorSource';
+// import ShowPointAnnotation from './components/ShowPointAnnotation';
+// import CreateOfflineRegion from './components/CreateOfflineRegion';
+// import DriveTheLine from './components/DriveTheLine';
+// import ImageOverlay from './components/ImageOverlay';
+// import DataDrivenCircleColors from './components/DataDrivenCircleColors';
+// import ChoroplethLayerByZoomLevel from './components/ChoroplethLayerByZoomLevel';
+// import PointInMapView from './components/PointInMapView';
+// import TakeSnapshot from './components/TakeSnapshot';
+// import TakeSnapshotWithMap from './components/TakeSnapshotWithMap';
 
 const styles = StyleSheet.create({
   noPermissionsText: {
@@ -126,34 +125,34 @@ class ExampleItem {
 
 const Examples = [
   new ExampleItem('Show Map', ShowMap),
-  new ExampleItem('Set Pitch', SetPitch),
-  new ExampleItem('Set Bearing', SetBearing),
-  new ExampleItem('Show Click', ShowClick),
-  new ExampleItem('Fly To', FlyTo),
-  new ExampleItem('Fit Bounds', FitBounds),
-  new ExampleItem('Set User Tracking Modes', SetUserTrackingModes),
-  new ExampleItem('Set User Location Vertical Alignment', SetUserLocationVerticalAlignment),
-  new ExampleItem('Show Region Did Change', ShowRegionDidChange),
+  // new ExampleItem('Set Pitch', SetPitch),
+  // new ExampleItem('Set Bearing', SetBearing),
+  // new ExampleItem('Show Click', ShowClick),
+  // new ExampleItem('Fly To', FlyTo),
+  // new ExampleItem('Fit Bounds', FitBounds),
+  // new ExampleItem('Set User Tracking Modes', SetUserTrackingModes),
+  // new ExampleItem('Set User Location Vertical Alignment', SetUserLocationVerticalAlignment),
+  // new ExampleItem('Show Region Did Change', ShowRegionDidChange),
   new ExampleItem('Custom Icon', CustomIcon),
-  new ExampleItem('Yo Yo Camera', YoYo),
-  new ExampleItem('Clustering Earthquakes', EarthQuakes),
-  new ExampleItem('GeoJSON Source', GeoJSONSource),
-  new ExampleItem('Watercolor Raster Tiles', WatercolorRasterTiles),
-  new ExampleItem('Two Map Views', TwoByTwo),
-  new ExampleItem('Indoor Building Map', IndoorBuilding),
-  new ExampleItem('Query Feature Point', QueryAtPoint),
-  new ExampleItem('Query Features Bounding Box', QueryWithRect),
-  new ExampleItem('Shape Source From Icon', ShapeSourceIcon),
-  new ExampleItem('Custom Vector Source', CustomVectorSource),
-  new ExampleItem('Show Point Annotation', ShowPointAnnotation),
-  new ExampleItem('Create Offline Region', CreateOfflineRegion),
-  new ExampleItem('Animation Along a Line', DriveTheLine),
-  new ExampleItem('Image Overlay', ImageOverlay),
-  new ExampleItem('Data Driven Circle Colors', DataDrivenCircleColors),
-  new ExampleItem('Choropleth Layer By Zoom Level', ChoroplethLayerByZoomLevel),
-  new ExampleItem('Get Pixel Point in MapView', PointInMapView),
-  new ExampleItem('Take Snapshot Without Map', TakeSnapshot),
-  new ExampleItem('Take Snapshot With Map', TakeSnapshotWithMap),
+  // new ExampleItem('Yo Yo Camera', YoYo),
+  // new ExampleItem('Clustering Earthquakes', EarthQuakes),
+  // new ExampleItem('GeoJSON Source', GeoJSONSource),
+  // new ExampleItem('Watercolor Raster Tiles', WatercolorRasterTiles),
+  // new ExampleItem('Two Map Views', TwoByTwo),
+  // new ExampleItem('Indoor Building Map', IndoorBuilding),
+  // new ExampleItem('Query Feature Point', QueryAtPoint),
+  // new ExampleItem('Query Features Bounding Box', QueryWithRect),
+  // new ExampleItem('Shape Source From Icon', ShapeSourceIcon),
+  // new ExampleItem('Custom Vector Source', CustomVectorSource),
+  // new ExampleItem('Show Point Annotation', ShowPointAnnotation),
+  // new ExampleItem('Create Offline Region', CreateOfflineRegion),
+  // new ExampleItem('Animation Along a Line', DriveTheLine),
+  // new ExampleItem('Image Overlay', ImageOverlay),
+  // new ExampleItem('Data Driven Circle Colors', DataDrivenCircleColors),
+  // new ExampleItem('Choropleth Layer By Zoom Level', ChoroplethLayerByZoomLevel),
+  // new ExampleItem('Get Pixel Point in MapView', PointInMapView),
+  // new ExampleItem('Take Snapshot Without Map', TakeSnapshot),
+  // new ExampleItem('Take Snapshot With Map', TakeSnapshotWithMap),
 ];
 
 class App extends React.Component {
@@ -219,33 +218,10 @@ class App extends React.Component {
     };
 
     return (
-      <Modal {...modalProps}>
-        <View style={styles.exampleBackground}>
+      <Modal {...modalProps} >
+        <View style={[styles.exampleBackground, { backgroundColor: colors.terminal }]}>
           {modalProps.visible  ? (
-            <item.Component key={item.label} label={item.label} onDismissExample={this.onCloseExample} />
-          ) : null}
-        </View>
-      </Modal>
-    );
-  }
-
-
-  onStartMap () {
-    // const item = this.getActiveItem();
-
-    const modalProps = {
-      // visible: !!item,
-      visible: true,
-      transparent: true,
-      animationType: 'slide',
-      onRequestClose: this.onCloseExample,
-    };
-
-    return (
-      <Modal {...modalProps}>
-        <View style={styles.exampleBackground}>
-          {modalProps.visible  ? (
-            <ShowMap key="Map" label="Map" onDismissExample={this.onCloseExample} />
+            <item.Component key={item.label} label="Saigon Underground" onDismissExample={this.onCloseExample} />
           ) : null}
         </View>
       </Modal>
@@ -266,27 +242,25 @@ class App extends React.Component {
       );
     }
 
+    const Touchable = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
+
     return (
-      <View style={sheet.matchParent}>
+      <View style={[sheet.matchParent, { backgroundColor: colors.terminal }]}>
         <MapHeader label="React Native Mapbox GL" />
 
         <View style={sheet.matchParent}>
-          <View style={styles.exampleList}>
-            <Button
-              onPress={() => this.onExamplePress(0)}
-              title="Launch map"
-              color="#FFF"
-              accessibilityLabel="Learn more about this purple button"
-              style={{backgroundColor: '#4444dd', padding: 10, }}
-            />
+          <View style={styles.exampleListItem}>
+            <View style={styles.exampleList}>
+              <Touchable
+                onPress={() => this.onExamplePress(0)}
+                accessibilityLabel="Head to the map"
+              >
+                <View style={ {backgroundColor: '#444444', padding: 10 }} >
+                  <Text style={{ color: '#FFFFFF', textAlign: 'center' }} >Launch map</Text>
+                </View>
+              </Touchable>
+            </View>
           </View>
-          {/*
-          <FlatList
-            style={styles.exampleList}
-            data={Examples}
-            keyExtractor={item => item.label}
-            renderItem={this.renderItem} />
-            */}
         </View>
 
         {this.renderActiveExample()}
