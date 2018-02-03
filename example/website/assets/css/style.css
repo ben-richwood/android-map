@@ -1,0 +1,292 @@
+/*
+Theme Name: Hydron (H+)
+Theme URI: http://projects.richebois.fr/hydron
+Version: 1.0
+Release: March, 26th 2017
+Description: Richwood basic Stylecheet based on bootstrap
+Author: Richwood
+Author URI: http://richebois.fr?lang=en
+
+SCSS manual -> http://sass-lang.com/guide
+*/
+/*
+	Colors
+ */
+/*
+	font
+ */
+/*
+	MIXINS
+ */
+/******************
+* BASICS
+* Soft reset
+*******************/
+html, body {
+  width: 100%;
+  font-family: "Droid Serif", "Lora", "Roboto Slab", "Merriweather", "Times New Roman", sans-serif;
+  color: #333;
+  background-color: #fdfdfd;
+  color: #999;
+  webkit-tap-highlight-color: #222; }
+
+html,
+body,
+textarea,
+figure,
+label {
+  margin: 0;
+  padding: 0; }
+
+ul,
+ol {
+  padding-left: 2em; }
+
+code,
+pre,
+samp {
+  white-space: pre-wrap;
+  font-family: consolas, "DejaVu Sans Mono", courier, monospace; }
+
+code {
+  line-height: 1em; }
+
+table {
+  margin-bottom: 1.5em; }
+
+/* avoid top margins on first content element */
+p:first-child,
+ul:first-child,
+ol:first-child,
+dl:first-child,
+blockquote:first-child,
+pre:first-child,
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 0; }
+
+/* avoid margins on nested elements */
+li p,
+li ul,
+li ol {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+/* HTML5 tags */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block; }
+
+/* max values */
+img, table, td, blockquote, code, pre, textarea, input, video {
+  max-width: 100%; }
+
+/* you shall not pass */
+div, textarea, table, td, th, code, pre, samp {
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto; }
+
+/* pictures */
+img {
+  width: auto;
+  height: auto;
+  vertical-align: middle; }
+
+a img {
+  border: 0; }
+
+a {
+  text-decoration: none;
+  color: #000; }
+
+/* scripts */
+body > script {
+  display: none !important; }
+
+/* skip-links */
+.skip-links {
+  position: absolute; }
+
+.skip-links a {
+  position: absolute;
+  left: -9999px;
+  padding: 0.5em;
+  background: #000;
+  color: #fff;
+  text-decoration: none; }
+
+.skip-links a:focus {
+  position: static; }
+
+/* *****************
+* SPECIAL
+****************** */
+::-moz-selection {
+  text-shadow: none;
+  color: #fff;
+  background: #222; }
+
+::selection {
+  text-shadow: none;
+  color: #fff;
+  background: #222; }
+
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* TRACK */
+::-webkit-scrollbar-track {
+  background-color: #ededed;
+  border-radius: 10px; }
+
+/* HANDLE */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #cbcbcb;
+  border-left: 1px solid #f2f2f2; }
+
+/* *****************
+* BASIC
+****************** */
+html {
+  height: 100vh; }
+
+body {
+  height: 100%;
+  background: #262A32 url(../img/dots/dots02-01.svg) 0 0/12.5% auto repeat fixed;
+  position: relative; }
+
+/* *****************
+* HEADER
+****************** */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Play", "Ubuntu", "Open Sans", "Helvetica Neue", "Droid Sans Serif", "Roboto", Arial, sans-serif;
+  color: #000; }
+
+h1 {
+  font-family: "Play", "Ubuntu", "Open Sans", "Helvetica Neue", "Droid Sans Serif", "Roboto", Arial, sans-serif; }
+
+.btn, .pending, .validate {
+  border: 1px solid transparent;
+  padding: 10px;
+  margin: 10px; }
+
+.pending {
+  border-color: #d2d2d2;
+  background-color: #d2d2d2; }
+
+.validate {
+  border-color: #a8da43;
+  background-color: #a8da43; }
+
+/* *****************
+* PERSONAL CLASSES
+****************** */
+.wide-space {
+  letter-spacing: 1.6px; }
+
+.white-space {
+  padding-top: 30px; }
+
+.icon-lg {
+  font-size: 50px;
+  line-height: 18px; }
+
+.bg-primary {
+  background-color: #a8da43; }
+
+.bg-dark {
+  color: #d2d2d2;
+  background-color: #4b4b4b; }
+
+.text-faded {
+  /* color: rgba(245,245,245,0.7); */
+  color: #333; }
+
+.text-dark {
+  color: #111; }
+
+.text-primary {
+  color: #080854;
+  margin-bottom: 37px;
+  text-transform: uppercase;
+  margin-top: 10px; }
+
+.modal-content {
+  background-color: #1d1d1d; }
+
+.margin-top-0 {
+  margin-top: 0; }
+
+.margin-top-large {
+  margin-top: 30px; }
+
+.no-gutter > [class*=col-] {
+  padding-right: 0;
+  padding-left: 0; }
+
+/* *****************
+* NAVIGATION
+****************** */
+nav ul {
+  margin-left: 0;
+  padding: 0;
+  list-style: none; }
+
+nav li {
+  display: inline-block; }
+
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none; }
+
+/****************************
+*        ANIMATIONS
+*****************************/
+@keyframes zoomin {
+  from {
+    transform: scale(1.3, 1.3); }
+  to {
+    transform: scale(1, 1); } }
+
+#zoom-photo {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 3%, transparent 18%), url("../assets/background-zoom.jpg");
+  background-position: 0 0, cover;
+  -webkit-background-size: 100% 100%, cover;
+  background-size: 100% 100%, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: static, static;
+  background-position: 50% 50%;
+  z-index: 100;
+  animation-name: zoomin;
+  animation-duration: 5.5s;
+  animation-timing-function: easeInQuad;
+  animation-delay: 0.5s;
+  -webkit-animation-fill-mode: both;
+  /* Safari 4.0 - 8.0 */
+  animation-fill-mode: both; }
+
+/* *****************
+* MODERNIZR
+****************** */
+/* *****************
+* MEDIA QUERIES
+****************** */
+/*==========  Mobile First Method  ==========*/
+/* Custom, iPhone Retina */
+/* Extra Small Devices, Phones */
+/* Small Devices, Tablets */
+/* Medium Devices, Desktops */
+/* Large Devices, Wide Screens */

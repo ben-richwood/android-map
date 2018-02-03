@@ -1,0 +1,526 @@
+@font-face {
+  font-family: 'Asterisk';
+  src: url("../font/Asterisk.ttf?97x92f") format("truetype");
+  src: url("../font/Asterisk.ttf?97x92f") format("truetype");
+  src: url("../font/Asterisk.eot?97x92f");
+  src: url("../font/Asterisk.eot?97x92f#iefix") format("embedded-opentype"), url("../font/Asterisk.woff?97x92f") format("woff"), url("../font/Asterisk.svg?97x92f#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'avaFont';
+  src: url("../fonts/lineto-lettera-pro-light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+body.ctOS {
+  /****************************
+	*        BOOTSTRAP style
+	*****************************/
+  /****************************
+	*        FORM
+	*****************************/
+  /* override bootstrap active state */
+  /* override Bootstrap excessive button padding */
+  /* Bootswatch Darkly input is too bright */ }
+  body.ctOS ::after, body.ctOS ::before {
+    box-sizing: border-box; }
+  body.ctOS div.row::before {
+    display: table;
+    content: " "; }
+  body.ctOS div.row::after {
+    clear: both;
+    display: table;
+    content: " "; }
+  body.ctOS section {
+    height: 100%; }
+    body.ctOS section .container-fluid {
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: stretch; }
+      body.ctOS section .container-fluid div.columns {
+        align-self: flex-start;
+        height: 100%;
+        position: relative;
+        min-height: 1px;
+        box-sizing: border-box;
+        font-family: "Ubuntu", "Open Sans", "Helvetica Neue", "Droid Sans Serif", "Roboto", Arial, sans-serif;
+        font-size: 12px;
+        padding: 3px;
+        height: 100%; }
+        body.ctOS section .container-fluid div.columns:first-child {
+          width: 25%;
+          max-width: 370px;
+          border-right: 1px solid #777; }
+        body.ctOS section .container-fluid div.columns div.intro {
+          display: block; }
+  body.ctOS div.columns > div:first-child {
+    display: none;
+    height: 100%; }
+  body.ctOS .displayedTiles {
+    display: block !important; }
+    body.ctOS .displayedTiles h2 {
+      font-family: "Ubuntu", "Open Sans", "Helvetica Neue", "Droid Sans Serif", "Roboto", Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      margin: 0;
+      padding: 4px;
+      overflow: hidden;
+      /*	color:rgba(255,255,255,0);*/
+      margin-bottom: 12px; }
+    body.ctOS .displayedTiles p, body.ctOS .displayedTiles div {
+      font-family: consolas, "DejaVu Sans Mono", courier, monospace;
+      font-size: 13px; }
+      body.ctOS .displayedTiles p span, body.ctOS .displayedTiles div span {
+        display: inline-block;
+        border-radius: 2px;
+        width: 12px;
+        height: 2px;
+        margin-right: 2px;
+        border: 0;
+        background-color: black; }
+        body.ctOS .displayedTiles p span.outdatedDays, body.ctOS .displayedTiles div span.outdatedDays {
+          background-color: rgba(162, 152, 28, 0.3); }
+        body.ctOS .displayedTiles p span.upcomingDays, body.ctOS .displayedTiles div span.upcomingDays {
+          background-color: #a2981c; }
+      body.ctOS .displayedTiles p ul.FEBE, body.ctOS .displayedTiles div ul.FEBE {
+        list-style: none;
+        font-size: 9px;
+        padding-left: 0;
+        margin-left: 0; }
+  body.ctOS .titleAnim {
+    -webkit-animation: titleAnim .6s;
+    animation: titleAnim .6s;
+    /*animation: titleAnim 2s steps(1);*/
+    background-color: #96E1E6;
+    color: black;
+    font-family: "Ubuntu", "Open Sans", "Helvetica Neue", "Droid Sans Serif", "Roboto", Arial, sans-serif; }
+
+@-webkit-keyframes titleAnim {
+  0% {
+    width: 0;
+    color: transparent; }
+  60% {
+    color: transparent; }
+  90% {
+    color: black; }
+  100% {
+    width: initial; } }
+
+@keyframes titleAnim {
+  0% {
+    width: 0;
+    color: transparent; }
+  60% {
+    color: transparent; }
+  90% {
+    color: black; }
+  100% {
+    width: 100%; } }
+  body.ctOS div.info, body.ctOS div.logs {
+    background-color: rgba(255, 255, 255, 0.02);
+    border-top: 3px solid #FFF;
+    color: #FFF;
+    max-width: 450px;
+    padding: 3px;
+    margin-bottom: 30px; }
+    body.ctOS div.info h2, body.ctOS div.logs h2 {
+      font-family: "Ubuntu", "Open Sans", "Helvetica Neue", "Droid Sans Serif", "Roboto", Arial, sans-serif;
+      text-transform: uppercase;
+      color: #FFF; }
+    body.ctOS div.info p, body.ctOS div.logs p {
+      color: #888; }
+  body.ctOS #lastCmd .linkHistory, body.ctOS #lastCmd .linkHistory:visited {
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    cursor: pointer; }
+    body.ctOS #lastCmd .linkHistory:hover, body.ctOS #lastCmd .linkHistory:visited:hover {
+      color: #FFF; }
+  body.ctOS #lastLogs {
+    padding-left: 0;
+    margin: 12px 0; }
+    body.ctOS #lastLogs li {
+      list-style: none; }
+  body.ctOS #logs div {
+    height: 100%; }
+  body.ctOS #blissProjets {
+    /* TRACK */
+    /* HANDLE */ }
+    body.ctOS #blissProjets > div
+body.ctOS #blissProjets::-webkit-scrollbar {
+      width: 10px; }
+    body.ctOS #blissProjets::-webkit-scrollbar-track {
+      background-color: #ededed;
+      border-radius: 10px; }
+    body.ctOS #blissProjets::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      background-color: #96E1E6;
+      border-left: 1px solid #f2f2f2; }
+    body.ctOS #blissProjets div.blissProjects {
+      position: relative; }
+      body.ctOS #blissProjets div.blissProjects.finished h4 + span {
+        background-color: #92A612; }
+      body.ctOS #blissProjets div.blissProjects.internal h4 + span {
+        background-color: #2EB3EA; }
+      body.ctOS #blissProjets div.blissProjects.cancelled, body.ctOS #blissProjets div.blissProjects.invoiced, body.ctOS #blissProjets div.blissProjects.done {
+        display: none; }
+        body.ctOS #blissProjets div.blissProjects.cancelled h4 + span, body.ctOS #blissProjets div.blissProjects.invoiced h4 + span, body.ctOS #blissProjets div.blissProjects.done h4 + span {
+          background-color: #666; }
+      body.ctOS #blissProjets div.blissProjects.in-development h4 + span {
+        background-color: #DB640E; }
+      body.ctOS #blissProjets div.blissProjects h4 {
+        border-top: 1px solid #96E1E6;
+        padding-top: 2px;
+        color: #a2a2a2;
+        font-weight: normal;
+        margin-bottom: 3px;
+        font-size: 16px; }
+        body.ctOS #blissProjets div.blissProjects h4 + span {
+          position: absolute;
+          top: 4px;
+          right: 1px;
+          border-radius: 1px;
+          width: 12px;
+          height: 2px; }
+      body.ctOS #blissProjets div.blissProjects:first-child h4 {
+        border-top: 0; }
+  body.ctOS .passwordBox {
+    width: auto;
+    display: none;
+    position: absolute;
+    top: 43%;
+    left: 62%;
+    transform: translateX(-50%);
+    z-index: 500; }
+    body.ctOS .passwordBox h3 {
+      text-transform: uppercase;
+      margin: 0;
+      background-color: #4DBEA4;
+      width: 271px;
+      height: 25px;
+      padding-left: 8px; }
+    body.ctOS .passwordBox > div {
+      background-color: #0F1223; }
+      body.ctOS .passwordBox > div form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: auto;
+        padding: 10px; }
+        body.ctOS .passwordBox > div form > * {
+          flex-basis: auto;
+          align-self: flex-start; }
+        body.ctOS .passwordBox > div form h4 {
+          display: inline-block;
+          text-transform: uppercase;
+          padding-right: 25px;
+          min-width: 115px;
+          color: #9E1B45;
+          font-size: 20px; }
+        body.ctOS .passwordBox > div form input[type="text"] {
+          font-family: 'Asterisk' !important;
+          background: url(../img/redX.png) 0 0/12.5% 100% repeat;
+          height: 80px;
+          width: 360px;
+          speak: none;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          /* Better Font Rendering =========== */
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          color: #FFF;
+          font-size: 45px; }
+    body.ctOS .passwordBox .closePwdBox {
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer; }
+      body.ctOS .passwordBox .closePwdBox img {
+        width: 25px;
+        height: 25px; }
+  body.ctOS .icon-AsteriskTypeFace:before {
+    content: "\e900";
+    color: #fff; }
+  body.ctOS .icon-asterisk {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  body.ctOS div#form {
+    width: 100%;
+    font-family: consolas, "DejaVu Sans Mono", courier, monospace;
+    display: block !important;
+    position: relative; }
+    body.ctOS div#form form#CLI_form {
+      position: absolute;
+      bottom: 4px;
+      width: 100%;
+      margin: 0 auto; }
+      body.ctOS div#form form#CLI_form span {
+        display: inline-block;
+        color: #999;
+        position: absolute;
+        top: 8px;
+        left: 4px;
+        z-index: 30;
+        font-size: 15px; }
+      body.ctOS div#form form#CLI_form input[type=text] {
+        font-size: 15px;
+        font-family: consolas, "DejaVu Sans Mono", courier, monospace;
+        padding: 6px 0 9px;
+        padding-left: 71px;
+        box-sizing: border-box;
+        width: 98%;
+        border: 0;
+        border-bottom-width: 0px;
+        border-bottom-style: none;
+        border-bottom-color: currentcolor;
+        background-color: transparent;
+        border-bottom: 2px solid #111; }
+        body.ctOS div#form form#CLI_form input[type=text]:focus {
+          border-bottom: 2px solid #96E1E6;
+          outline: none; }
+      body.ctOS div#form form#CLI_form input[type=submit] {
+        position: absolute;
+        top: 0;
+        right: 8%;
+        z-index: 40;
+        display: block;
+        background: transparent url("../img/miniKeyboard.svg") 50% 50%/cover no-repeat;
+        border: 0;
+        height: 35px;
+        width: 35px; }
+      body.ctOS div#form form#CLI_form + div {
+        position: absolute;
+        bottom: 32px; }
+  body.ctOS button.btn-default:active {
+    background-color: #FFF;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+  body.ctOS button.btn-default:active:hover {
+    background-color: #3276B1; }
+  body.ctOS button.ui-keyboard-button.btn {
+    padding: 1px 6px; }
+  body.ctOS .ui-keyboard-input.light, body.ctOS .ui-keyboard-preview.light {
+    color: #222;
+    background: #ddd; }
+  body.ctOS .ui-keyboard-input.dark, body.ctOS .ui-keyboard-preview.dark {
+    color: #ddd;
+    background: #222; }
+  body.ctOS div#inter_keyboard .ui-keyboard div {
+    font-size: 1.1em; }
+  body.ctOS div#inter_keyboard .ui-keyboard-keyset {
+    text-align: center;
+    white-space: nowrap; }
+  body.ctOS div#inter_keyboard .ui-keyboard-text {
+    color: #00eeee; }
+  body.ctOS div#inter_keyboard .btn-primary .ui-keyboard-text {
+    color: #464545; }
+  body.ctOS div#inter_keyboard button.ui-keyboard-button.btn {
+    padding: 1px 6px;
+    min-width: 37px;
+    min-height: 30px; }
+  body.ctOS div#inter_keyboard .btn {
+    border-width: 2px;
+    min-width: 30px;
+    margin: 2px; }
+  body.ctOS div#inter_keyboard .btn-default {
+    color: #00eeee;
+    background-color: transparent;
+    border-color: transparent; }
+  body.ctOS div#inter_keyboard .btn-default.btn-primary {
+    color: #000;
+    background-color: #00eeee;
+    border-color: #00eeee; }
+  body.ctOS button.ui-keyboard-button.ui-keyboard-actionkey.ui-keyboard-space.btn.btn-default {
+    width: 200px; }
+  body.ctOS div#inter_keyboard .btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    white-space: nowrap;
+    padding: 10px 15px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  body.ctOS div#inter_keyboard {
+    display: none;
+    position: absolute;
+    width: auto;
+    bottom: 30px;
+    top: auto;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%); }
+  body.ctOS .center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+  body.ctOS .well {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: rgba(48, 48, 48, 0.6);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); }
+    body.ctOS .well .glitch {
+      color: white;
+      font-size: 100px;
+      position: relative;
+      width: 400px;
+      margin: 0 auto; }
+
+@keyframes noise-anim {
+  0% {
+    clip: rect(50px, 9999px, 69px, 0); }
+  5% {
+    clip: rect(77px, 9999px, 27px, 0); }
+  10% {
+    clip: rect(90px, 9999px, 74px, 0); }
+  15% {
+    clip: rect(81px, 9999px, 11px, 0); }
+  20% {
+    clip: rect(84px, 9999px, 3px, 0); }
+  25% {
+    clip: rect(34px, 9999px, 66px, 0); }
+  30% {
+    clip: rect(71px, 9999px, 16px, 0); }
+  35% {
+    clip: rect(80px, 9999px, 90px, 0); }
+  40% {
+    clip: rect(12px, 9999px, 9px, 0); }
+  45% {
+    clip: rect(72px, 9999px, 10px, 0); }
+  50% {
+    clip: rect(13px, 9999px, 100px, 0); }
+  55% {
+    clip: rect(6px, 9999px, 43px, 0); }
+  60% {
+    clip: rect(99px, 9999px, 77px, 0); }
+  65% {
+    clip: rect(16px, 9999px, 62px, 0); }
+  70% {
+    clip: rect(87px, 9999px, 57px, 0); }
+  75% {
+    clip: rect(76px, 9999px, 100px, 0); }
+  80% {
+    clip: rect(59px, 9999px, 23px, 0); }
+  85% {
+    clip: rect(9px, 9999px, 100px, 0); }
+  90% {
+    clip: rect(53px, 9999px, 92px, 0); }
+  95% {
+    clip: rect(84px, 9999px, 100px, 0); }
+  100% {
+    clip: rect(26px, 9999px, 1px, 0); } }
+    body.ctOS .well .glitch:after {
+      content: attr(data-text);
+      position: absolute;
+      left: 2px;
+      text-shadow: -1px 0 red;
+      top: 0;
+      color: white;
+      background: black;
+      overflow: hidden;
+      clip: rect(0, 900px, 0, 0);
+      animation: noise-anim 2s infinite linear alternate-reverse; }
+
+@keyframes noise-anim-2 {
+  0% {
+    clip: rect(41px, 9999px, 88px, 0); }
+  5% {
+    clip: rect(86px, 9999px, 50px, 0); }
+  10% {
+    clip: rect(57px, 9999px, 74px, 0); }
+  15% {
+    clip: rect(40px, 9999px, 69px, 0); }
+  20% {
+    clip: rect(84px, 9999px, 79px, 0); }
+  25% {
+    clip: rect(10px, 9999px, 65px, 0); }
+  30% {
+    clip: rect(51px, 9999px, 29px, 0); }
+  35% {
+    clip: rect(74px, 9999px, 22px, 0); }
+  40% {
+    clip: rect(5px, 9999px, 73px, 0); }
+  45% {
+    clip: rect(72px, 9999px, 12px, 0); }
+  50% {
+    clip: rect(50px, 9999px, 52px, 0); }
+  55% {
+    clip: rect(40px, 9999px, 46px, 0); }
+  60% {
+    clip: rect(1px, 9999px, 33px, 0); }
+  65% {
+    clip: rect(63px, 9999px, 30px, 0); }
+  70% {
+    clip: rect(65px, 9999px, 23px, 0); }
+  75% {
+    clip: rect(24px, 9999px, 19px, 0); }
+  80% {
+    clip: rect(99px, 9999px, 61px, 0); }
+  85% {
+    clip: rect(27px, 9999px, 98px, 0); }
+  90% {
+    clip: rect(13px, 9999px, 11px, 0); }
+  95% {
+    clip: rect(5px, 9999px, 28px, 0); }
+  100% {
+    clip: rect(77px, 9999px, 51px, 0); } }
+    body.ctOS .well .glitch:before {
+      content: attr(data-text);
+      position: absolute;
+      left: -2px;
+      text-shadow: 1px 0 blue;
+      top: 0;
+      color: white;
+      background: black;
+      overflow: hidden;
+      clip: rect(0, 900px, 0, 0);
+      animation: noise-anim-2 3s infinite linear alternate-reverse; }
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  div#inter_keyboard {
+    display: block; }
+  div#form form#CLI_form input[type=submit] {
+    display: none; } }
