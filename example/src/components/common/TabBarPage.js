@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, View } from 'react-native';
 import { ButtonGroup } from 'react-native-elements';
 
 import BaseExamplePropTypes from './BaseExamplePropTypes';
@@ -88,7 +88,12 @@ class TabBarPage extends React.Component {
     return (
       <Page {...this.props}>
         {this.props.children}
-        {view}
+        {
+          this.props.ready ?
+            view
+          :
+            <View></View>
+        }
       </Page>
     );
   }

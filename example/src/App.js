@@ -221,7 +221,7 @@ class App extends React.Component {
       <Modal {...modalProps} >
         <View style={[styles.exampleBackground, { backgroundColor: colors.terminal }]}>
           {modalProps.visible  ? (
-            <item.Component key={item.label} label="Saigon Underground" onDismissExample={this.onCloseExample} />
+            <item.Component key={item.label} label="Explore" onDismissExample={this.onCloseExample} />
           ) : null}
         </View>
       </Modal>
@@ -246,7 +246,7 @@ class App extends React.Component {
 
     return (
       <View style={[sheet.matchParent, { backgroundColor: colors.terminal }]}>
-        <MapHeader label="React Native Mapbox GL" />
+        <MapHeader label="Saigon Underground" />
 
         <View style={sheet.matchParent}>
           <View style={styles.exampleListItem}>
@@ -256,7 +256,7 @@ class App extends React.Component {
                 accessibilityLabel="Head to the map"
               >
                 <View style={ {backgroundColor: '#444444', padding: 10 }} >
-                  <Text style={{ color: '#FFFFFF', textAlign: 'center' }} >Launch map</Text>
+                  <Text style={{ color: '#FFFFFF', textAlign: 'center' }} >Start exploring</Text>
                 </View>
               </Touchable>
             </View>
