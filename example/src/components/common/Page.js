@@ -17,8 +17,8 @@ class Page extends React.Component {
       <View style={sheet.matchParent}>
         <MapHeader
           relative
-          backgroundColor={colors.primary.pink}
-          statusBarColor={colors.primary.pinkDark}
+          backgroundColor={colors.terminal}
+          statusBarColor={colors.terminal}
           statusBarTextTheme={'light-content'}
           label={this.props.label}
           onBack={this.props.onDismissExample} />

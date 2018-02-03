@@ -7,6 +7,18 @@ import TabBarPage from './common/TabBarPage';
 import sheet from '../styles/sheet';
 import { onSortOptions } from '../utils';
 
+const styleList = {
+  Termainal: "mapbox://styles/richwood/cjbkiibly17pi2snys9thsau1",
+  Dark: "mapbox://styles/mapbox/dark-v9",
+  Light: "mapbox://styles/mapbox/light-v9",
+  Outdoors: "mapbox://styles/mapbox/outdoors-v10",
+  Satellite: "mapbox://styles/mapbox/satellite-v9",
+  // SatelliteStreet: "mapbox://styles/mapbox/satellite-streets-v10",
+  // Street: "mapbox://styles/mapbox/streets-v10",
+  // TrafficDay: "mapbox://styles/mapbox/traffic-day-v2",
+  // TrafficNight: "mapbox://styles/mapbox/traffic-night-v2",
+}
+
 class ShowMap extends React.Component {
   static propTypes = {
     ...BaseExamplePropTypes,
@@ -15,12 +27,19 @@ class ShowMap extends React.Component {
   constructor (props) {
     super(props);
 
-    this._mapOptions = Object.keys(MapboxGL.StyleURL).map((key) => {
+    // this._mapOptions = Object.keys(MapboxGL.StyleURL).map((key) => {
+    //   return {
+    //     label: key,
+    //     data: MapboxGL.StyleURL[key],
+    //   };
+    // }).sort(onSortOptions);
+
+    this._mapOptions = Object.keys(styleList).map((key) => {
       return {
         label: key,
-        data: MapboxGL.StyleURL[key],
+        data: styleList[key],
       };
-    }).sort(onSortOptions);
+    })
 
     this.state = {
       styleURL: this._mapOptions[0].data,
@@ -34,11 +53,15 @@ class ShowMap extends React.Component {
   }
 
   render () {
+    console.log('MapboxGL.StyleURL: ', MapboxGL.StyleURL);
     return (
       <TabBarPage {...this.props} scrollable options={this._mapOptions} onOptionPress={this.onMapChange}>
         <MapboxGL.MapView
-            showUserLocation={true}
-            zoomLevel={12}
+            centerCoordinate={[106.6982,10.7715]}
+            showUserLocation
+            zoomLevel={14.6}
+            minZoomLevel={11.8}
+            pitch={45}
             userTrackingMode={MapboxGL.UserTrackingModes.Follow}
             styleURL={this.state.styleURL}
             style={sheet.matchParent} />

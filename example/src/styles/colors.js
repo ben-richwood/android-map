@@ -1,4 +1,5 @@
 const colors = {
+  terminal: '#1d1d1d',
   primary: {
     blueDark: '#314ccd',
     blue: '#4264fb',

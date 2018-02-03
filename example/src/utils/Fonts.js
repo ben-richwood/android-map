@@ -1,3 +1,3 @@
 export const Fonts = {
-  Pexico: 'PexicoMicro',
+  // Pexico: 'PexicoMicro',
 }

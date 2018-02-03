@@ -21,7 +21,7 @@ import {
 // Setting a default background color for all View components.
 const customViewProps = {
   style: {
-    backgroundColor: '#333333'
+    backgroundColor: colors.terminal,
   }
 };
 // Setting default styles for all Text components.
@@ -29,7 +29,7 @@ const customTextProps = {
   style: {
     fontSize: 16,
     // fontFamily: Platform.OS === 'ios' ? 'HelveticaNeue' : 'Roboto',
-    fontFamily: Fonts.Pexico,
+    // fontFamily: Fonts.Pexico,
     color: 'black'
   }
 };
@@ -110,7 +110,8 @@ const styles = StyleSheet.create({
   },
   exampleBackground: {
     flex: 1,
-    backgroundColor: colors.primary.pinkFaint,
+    // backgroundColor: colors.primary.pinkFaint,
+    backgroundColor: colors.terminal,
   },
 });
 
@@ -230,10 +231,11 @@ class App extends React.Component {
 
 
   onStartMap () {
-    const item = this.getActiveItem();
+    // const item = this.getActiveItem();
 
     const modalProps = {
-      visible: !!item,
+      // visible: !!item,
+      visible: true,
       transparent: true,
       animationType: 'slide',
       onRequestClose: this.onCloseExample,
@@ -269,12 +271,15 @@ class App extends React.Component {
         <MapHeader label="React Native Mapbox GL" />
 
         <View style={sheet.matchParent}>
-          <Button
-            onPress={this.onStartMap}
-            title="Learn More"
-            color="#841584"
-            accessibilityLabel="Learn more about this purple button"
-          />
+          <View style={styles.exampleList}>
+            <Button
+              onPress={() => this.onExamplePress(0)}
+              title="Launch map"
+              color="#FFF"
+              accessibilityLabel="Learn more about this purple button"
+              style={{backgroundColor: '#4444dd', padding: 10, }}
+            />
+          </View>
           {/*
           <FlatList
             style={styles.exampleList}
