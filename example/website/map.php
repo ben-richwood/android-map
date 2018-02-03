@@ -6,8 +6,8 @@
 
    <!-- BASIC INFO -->
    <title></></title>
-   <meta name="author" content="Ben Richwood">
-   <meta name="keywords" content="">
+                 <meta name="author" content="Ben Richwood">
+                 <meta name="keywords" content="">
 
    <!-- FAVICONS -->
    <link rel="icon" href="img/flavicon.ico">
@@ -19,6 +19,7 @@
 
    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='./assets/css/watchdogs.css' rel='stylesheet' />
 
    <!-- **OPEN GRAPH** -->
    <link rel="canonical" href="http://richebois.fr" />
@@ -67,7 +68,7 @@
 
 </head>
 
-<body>
+<body class='ctOS'>
 
   <div id='map'></div>
   <div id='menu'>
@@ -80,22 +81,17 @@
     <input id='streets' type='radio' name='rtoggle' value='streets'>
     <label for='streets'>streets</label>
     <input id='bright' type='radio' name='rtoggle' value='bright'>
-    <label for='bright'>bright</label>
-    <input id='light' type='radio' name='rtoggle' value='light'>
-    <label for='light'>light</label>
-    <input id='dark' type='radio' name='rtoggle' value='dark'>
-    <label for='dark'>dark</label>
-    <input id='satellite' type='radio' name='rtoggle' value='satellite'>
-    <label for='satellite'>satellite</label>
   </div>
 
   <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoicmljaHdvb2QiLCJhIjoiY2lscGJwcjZlMDAzbnk2bTAydDk4bzQ5ayJ9.mkDGtvQvg1SKYi0xanRBXQ';
     var map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/richwood/cjbkiibly17pi2snys9thsau1',
-      center: [106.678,10.788],
+      style: 'mapbox://styles/richwood/cjd75k94l03342sqa47hokdt3',
+      center: [106.705755,10.738909],
       zoom: 15.8,
+      pitch: 45, // pitch in degrees
+      bearing: 00, // bearing in degrees
     });
 
     map.on('load', function () {
@@ -155,7 +151,7 @@
 
       map.on('click', function(e) {
         var features = map.queryRenderedFeatures(e.point, {
-          layers: ['places-in-hcm'] // replace this with the name of the layer
+          layers: ['SU-markers', 'SU-lines',] // replace this with the name of the layer
         });
 
         if (!features.length) {
@@ -204,7 +200,7 @@
       inputs[i].onclick = switchLayer;
   }
   inputs[0].onclick = function(){
-    map.setStyle('mapbox://styles/richwood/cjbkiibly17pi2snys9thsau1');
+    map.setStyle('mapbox://styles/richwood/cjd75k94l03342sqa47hokdt3');
   }
   inputs[1].onclick = function(){
     map.setStyle('mapbox://styles/richwood/cjcrz5zbq1tkl2rpdctydxeqf');

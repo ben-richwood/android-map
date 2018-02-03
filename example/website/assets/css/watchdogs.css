@@ -9,7 +9,13 @@
 
 @font-face {
   font-family: 'avaFont';
-  src: url("../fonts/lineto-lettera-pro-light.woff") format("woff");
+  src: url("../font/lineto-lettera-pro-light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'PexicoMicro';
+  src: url("../font/PexicoMicro.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
@@ -72,7 +78,7 @@ body.ctOS {
       /*	color:rgba(255,255,255,0);*/
       margin-bottom: 12px; }
     body.ctOS .displayedTiles p, body.ctOS .displayedTiles div {
-      font-family: consolas, "DejaVu Sans Mono", courier, monospace;
+      font-family: "PexicoMicro", consolas, "DejaVu Sans Mono", courier, monospace;
       font-size: 13px; }
       body.ctOS .displayedTiles p span, body.ctOS .displayedTiles div span {
         display: inline-block;
@@ -265,7 +271,7 @@ body.ctOS #blissProjets::-webkit-scrollbar {
     -moz-osx-font-smoothing: grayscale; }
   body.ctOS div#form {
     width: 100%;
-    font-family: consolas, "DejaVu Sans Mono", courier, monospace;
+    font-family: "PexicoMicro", consolas, "DejaVu Sans Mono", courier, monospace;
     display: block !important;
     position: relative; }
     body.ctOS div#form form#CLI_form {
@@ -283,7 +289,7 @@ body.ctOS #blissProjets::-webkit-scrollbar {
         font-size: 15px; }
       body.ctOS div#form form#CLI_form input[type=text] {
         font-size: 15px;
-        font-family: consolas, "DejaVu Sans Mono", courier, monospace;
+        font-family: "PexicoMicro", consolas, "DejaVu Sans Mono", courier, monospace;
         padding: 6px 0 9px;
         padding-left: 71px;
         box-sizing: border-box;
@@ -392,6 +398,28 @@ body.ctOS #blissProjets::-webkit-scrollbar {
     display: block;
     margin-left: auto;
     margin-right: auto; }
+  body.ctOS .mapboxgl-popup {
+    font-family: "Ubuntu", "Open Sans", "Helvetica Neue", "Droid Sans Serif", "Roboto", Arial, sans-serif; }
+    body.ctOS .mapboxgl-popup-tip {
+      display: none; }
+    body.ctOS .mapboxgl-popup-content {
+      border-left: 1px solid #FFF;
+      background-color: transparent;
+      transform: translate(51%, 0); }
+      body.ctOS .mapboxgl-popup-content h3, body.ctOS .mapboxgl-popup-content > p {
+        background-color: #111;
+        color: #FFF;
+        padding: 4px;
+        margin: 3px 0; }
+      body.ctOS .mapboxgl-popup-content h3 {
+        font-family: "PexicoMicro", consolas, "DejaVu Sans Mono", courier, monospace;
+        font-size: 23px;
+        display: inline-block; }
+    body.ctOS .mapboxgl-popup-close-button {
+      background-color: #000;
+      color: #FFF;
+      height: 20px;
+      width: 20px; }
   body.ctOS .well {
     min-height: 20px;
     padding: 19px;
@@ -410,47 +438,47 @@ body.ctOS #blissProjets::-webkit-scrollbar {
 
 @keyframes noise-anim {
   0% {
-    clip: rect(50px, 9999px, 69px, 0); }
+    clip: rect(42px, 9999px, 28px, 0); }
   5% {
-    clip: rect(77px, 9999px, 27px, 0); }
+    clip: rect(39px, 9999px, 48px, 0); }
   10% {
-    clip: rect(90px, 9999px, 74px, 0); }
+    clip: rect(46px, 9999px, 69px, 0); }
   15% {
-    clip: rect(81px, 9999px, 11px, 0); }
+    clip: rect(85px, 9999px, 82px, 0); }
   20% {
-    clip: rect(84px, 9999px, 3px, 0); }
+    clip: rect(42px, 9999px, 100px, 0); }
   25% {
-    clip: rect(34px, 9999px, 66px, 0); }
+    clip: rect(16px, 9999px, 80px, 0); }
   30% {
-    clip: rect(71px, 9999px, 16px, 0); }
+    clip: rect(27px, 9999px, 34px, 0); }
   35% {
-    clip: rect(80px, 9999px, 90px, 0); }
+    clip: rect(65px, 9999px, 38px, 0); }
   40% {
-    clip: rect(12px, 9999px, 9px, 0); }
+    clip: rect(10px, 9999px, 76px, 0); }
   45% {
-    clip: rect(72px, 9999px, 10px, 0); }
+    clip: rect(19px, 9999px, 29px, 0); }
   50% {
-    clip: rect(13px, 9999px, 100px, 0); }
+    clip: rect(22px, 9999px, 53px, 0); }
   55% {
-    clip: rect(6px, 9999px, 43px, 0); }
+    clip: rect(85px, 9999px, 11px, 0); }
   60% {
-    clip: rect(99px, 9999px, 77px, 0); }
+    clip: rect(43px, 9999px, 8px, 0); }
   65% {
-    clip: rect(16px, 9999px, 62px, 0); }
+    clip: rect(31px, 9999px, 57px, 0); }
   70% {
-    clip: rect(87px, 9999px, 57px, 0); }
+    clip: rect(9px, 9999px, 44px, 0); }
   75% {
-    clip: rect(76px, 9999px, 100px, 0); }
+    clip: rect(24px, 9999px, 61px, 0); }
   80% {
-    clip: rect(59px, 9999px, 23px, 0); }
+    clip: rect(85px, 9999px, 75px, 0); }
   85% {
-    clip: rect(9px, 9999px, 100px, 0); }
+    clip: rect(82px, 9999px, 14px, 0); }
   90% {
-    clip: rect(53px, 9999px, 92px, 0); }
+    clip: rect(76px, 9999px, 4px, 0); }
   95% {
-    clip: rect(84px, 9999px, 100px, 0); }
+    clip: rect(88px, 9999px, 94px, 0); }
   100% {
-    clip: rect(26px, 9999px, 1px, 0); } }
+    clip: rect(28px, 9999px, 34px, 0); } }
     body.ctOS .well .glitch:after {
       content: attr(data-text);
       position: absolute;
@@ -465,47 +493,47 @@ body.ctOS #blissProjets::-webkit-scrollbar {
 
 @keyframes noise-anim-2 {
   0% {
-    clip: rect(41px, 9999px, 88px, 0); }
+    clip: rect(37px, 9999px, 44px, 0); }
   5% {
-    clip: rect(86px, 9999px, 50px, 0); }
+    clip: rect(100px, 9999px, 11px, 0); }
   10% {
-    clip: rect(57px, 9999px, 74px, 0); }
+    clip: rect(8px, 9999px, 7px, 0); }
   15% {
-    clip: rect(40px, 9999px, 69px, 0); }
+    clip: rect(33px, 9999px, 74px, 0); }
   20% {
-    clip: rect(84px, 9999px, 79px, 0); }
+    clip: rect(55px, 9999px, 100px, 0); }
   25% {
-    clip: rect(10px, 9999px, 65px, 0); }
+    clip: rect(43px, 9999px, 9px, 0); }
   30% {
-    clip: rect(51px, 9999px, 29px, 0); }
+    clip: rect(10px, 9999px, 41px, 0); }
   35% {
-    clip: rect(74px, 9999px, 22px, 0); }
+    clip: rect(5px, 9999px, 35px, 0); }
   40% {
-    clip: rect(5px, 9999px, 73px, 0); }
+    clip: rect(34px, 9999px, 68px, 0); }
   45% {
-    clip: rect(72px, 9999px, 12px, 0); }
+    clip: rect(80px, 9999px, 96px, 0); }
   50% {
-    clip: rect(50px, 9999px, 52px, 0); }
+    clip: rect(77px, 9999px, 23px, 0); }
   55% {
-    clip: rect(40px, 9999px, 46px, 0); }
+    clip: rect(83px, 9999px, 27px, 0); }
   60% {
-    clip: rect(1px, 9999px, 33px, 0); }
+    clip: rect(32px, 9999px, 18px, 0); }
   65% {
-    clip: rect(63px, 9999px, 30px, 0); }
+    clip: rect(93px, 9999px, 1px, 0); }
   70% {
-    clip: rect(65px, 9999px, 23px, 0); }
+    clip: rect(57px, 9999px, 20px, 0); }
   75% {
-    clip: rect(24px, 9999px, 19px, 0); }
+    clip: rect(65px, 9999px, 44px, 0); }
   80% {
-    clip: rect(99px, 9999px, 61px, 0); }
+    clip: rect(68px, 9999px, 95px, 0); }
   85% {
-    clip: rect(27px, 9999px, 98px, 0); }
+    clip: rect(39px, 9999px, 46px, 0); }
   90% {
-    clip: rect(13px, 9999px, 11px, 0); }
+    clip: rect(24px, 9999px, 78px, 0); }
   95% {
-    clip: rect(5px, 9999px, 28px, 0); }
+    clip: rect(36px, 9999px, 60px, 0); }
   100% {
-    clip: rect(77px, 9999px, 51px, 0); } }
+    clip: rect(79px, 9999px, 38px, 0); } }
     body.ctOS .well .glitch:before {
       content: attr(data-text);
       position: absolute;
