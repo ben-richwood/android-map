@@ -82,6 +82,17 @@
     <label for='streets'>streets</label>
     <input id='bright' type='radio' name='rtoggle' value='bright'>
   </div>
+  <div id="typeMenu">
+    <div class="innocentBG">
+      <div class="fixedBigImage">
+        <div class="typeMapMenu">
+          <div class="typeMapMenu-left"><h3>Chic</h3></div>
+          <div class="typeMapMenu-center"><h3>Underground</h3></div>
+          <div class="typeMapMenu-right"><h3>Exploring</h3></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoicmljaHdvb2QiLCJhIjoiY2lscGJwcjZlMDAzbnk2bTAydDk4bzQ5ayJ9.mkDGtvQvg1SKYi0xanRBXQ';
