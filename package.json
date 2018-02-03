@@ -39,6 +39,7 @@
     "react-native": ">=0.47.1"
   },
   "dependencies": {
+    "@mapbox/react-native-mapbox-gl": "^6.0.3-rc1",
     "@turf/helpers": "4.6.0"
   },
   "devDependencies": {
