@@ -5,7 +5,8 @@ import BaseExamplePropTypes from './common/BaseExamplePropTypes';
 import TabBarPage from './common/TabBarPage';
 
 import sheet from '../styles/sheet';
-import { onSortOptions } from '../utils';
+import exampleIcon from '../assets/example.png';
+// import { onSortOptions } from '../utils';
 
 const styleList = {
   Termainal: "mapbox://styles/richwood/cjbkiibly17pi2snys9thsau1",
@@ -18,6 +19,14 @@ const styleList = {
   // TrafficDay: "mapbox://styles/mapbox/traffic-day-v2",
   // TrafficNight: "mapbox://styles/mapbox/traffic-night-v2",
 }
+
+const styles = MapboxGL.StyleSheet.create({
+  icon: {
+    iconImage: exampleIcon,
+    iconAllowOverlap: true,
+    iconSize: 0.5,
+  },
+})
 
 class ShowMap extends React.Component {
   static propTypes = {
