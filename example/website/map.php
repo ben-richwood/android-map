@@ -52,27 +52,16 @@
    <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
 
   <style>
-    #menu {
-      position: absolute;
-      background: #fff;
-      padding: 10px;
-      font-family: 'Open Sans', sans-serif;
-    }
-    .mapboxgl-popup {
-      max-width: 400px;
-      font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    }
-    body { margin:0; padding:0; }
     #map { position:absolute; top:0; bottom:0; width:100%; height:100%;}
   </style>
 
 </head>
 
-<body class='ctOS'>
+<body class='underground'>
 
   <div id='map'></div>
   <div id='menu'>
-    <input id='basic' type='radio' name='rtoggle' value='basic' checked='checked'>
+    <!-- <input id='basic' type='radio' name='rtoggle' value='basic' checked='checked'>
     <label for='basic'>Terminal</label>
     <input id='vintage' type='radio' name='rtoggle' value='vintage'>
     <label for='vintage'>Vintage</label>
@@ -80,9 +69,11 @@
     <label for='metropolis'>Metropolis</label>
     <input id='streets' type='radio' name='rtoggle' value='streets'>
     <label for='streets'>streets</label>
-    <input id='bright' type='radio' name='rtoggle' value='bright'>
+    <input id='bright' type='radio' name='rtoggle' value='bright'> -->
+    <button type="button" name="button">MENU</button>
   </div>
   <div id="typeMenu">
+    <div class="typeMenu-title"><h2>Type of activity</h2></div>
     <div class="innocentBG">
       <div class="fixedBigImage">
         <div class="typeMapMenu">
@@ -95,10 +86,27 @@
   </div>
 
   <script>
+    const theme = [
+      {
+        name: 'exploring',
+        styleName: 'mapbox://styles/richwood/cjcrz5zbq1tkl2rpdctydxeqf',
+      },
+      {
+        name: 'underground',
+        styleName: 'mapbox://styles/richwood/cjd75k94l03342sqa47hokdt3',
+      },
+      {
+        name: 'chic',
+        styleName: 'mapbox://styles/richwood/cjcrzuz8m3dd12sms1q0dnit8',
+      },
+    ];
+    const inputs = document.querySelectorAll('div.typeMapMenu > div');
+    const MENU = document.querySelector('div#menu button');
+
     mapboxgl.accessToken = 'pk.eyJ1IjoicmljaHdvb2QiLCJhIjoiY2lscGJwcjZlMDAzbnk2bTAydDk4bzQ5ayJ9.mkDGtvQvg1SKYi0xanRBXQ';
     var map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/richwood/cjd75k94l03342sqa47hokdt3',
+      style: theme[1].styleName,
       center: [106.705755,10.738909],
       zoom: 15.8,
       pitch: 45, // pitch in degrees
@@ -162,7 +170,7 @@
 
       map.on('click', function(e) {
         var features = map.queryRenderedFeatures(e.point, {
-          layers: ['SU-markers', 'SU-lines',] // replace this with the name of the layer
+          layers: ['SU-markers', 'SU-lines', 'SU-polygons'] // replace this with the name of the layer
         });
 
         if (!features.length) {
@@ -177,8 +185,6 @@
           .setLngLat(feature.geometry.coordinates)
           .addTo(map);
       });
-
-
 
       // Change the cursor to a pointer when the mouse is over the places layer.
       map.on('mouseenter', 'places', function () {
@@ -199,26 +205,25 @@
       trackUserLocation: true
   }));
 
-  var layerList = document.getElementById('menu');
-  var inputs = layerList.getElementsByTagName('input');
-
-  function switchLayer(layer) {
-      var layerId = layer.target.id;
-      map.setStyle('mapbox://styles/mapbox/' + layerId + '-v9');
-  }
-
   for (var i = 0; i < inputs.length; i++) {
-      inputs[i].onclick = switchLayer;
+    // inputs[i].onclick = switchLayer(i);
+    // inputs[i].addEventListener("click", function(){ console.log(i); switchLayer(i); }, {once:false, passive:false});
   }
-  inputs[0].onclick = function(){
-    map.setStyle('mapbox://styles/richwood/cjd75k94l03342sqa47hokdt3');
+  MENU.addEventListener("click", function(){ document.querySelector('div#typeMenu').style.display = 'block';}, {once:false, passive:false});
+
+  inputs[0].addEventListener("click", function(){ switchLayer(0); }, {once:false, passive:false});
+  inputs[1].addEventListener("click", function(){switchLayer(1); }, {once:false, passive:false});
+  inputs[2].addEventListener("click", function(){switchLayer(2); }, {once:false, passive:false});
+
+  function switchLayer(idx) {
+      // var layerId = layer.target.id;
+      var layerId = theme[idx].styleName;
+      map.setStyle(layerId);
+      document.body.className = theme[idx].name;
+      console.log(theme[idx].name + ' selected');
+      document.querySelector('div#typeMenu').style.display = 'none';
   }
-  inputs[1].onclick = function(){
-    map.setStyle('mapbox://styles/richwood/cjcrz5zbq1tkl2rpdctydxeqf');
-  }
-  inputs[2].onclick = function(){
-    map.setStyle('mapbox://styles/richwood/cjcrzuz8m3dd12sms1q0dnit8');
-  }
+
 </script>
 
 
