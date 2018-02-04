@@ -196,7 +196,7 @@ body{
 						background-color: #666;
 						position: relative;
 						background-position: 50% 50%;
-						background-size: cover;
+						background-size: auto;
 						background-attachment: fixed;
 						background-repeat: no-repeat;
 						border: 2px solid transparent;
@@ -367,6 +367,7 @@ body{
 				width: 20px;
 				transform: translate(-10px, -22px);
 				border-radius: 0;
+				font-size: 20px;
 			}
 			&-anchor-bottom .mapboxgl-popup-content{
 				padding-top: 0;
