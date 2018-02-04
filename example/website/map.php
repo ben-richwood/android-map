@@ -102,11 +102,12 @@
     ];
     const inputs = document.querySelectorAll('div.typeMapMenu > div');
     const MENU = document.querySelector('div#menu button');
+    let currentTheme = 1;
 
     mapboxgl.accessToken = 'pk.eyJ1IjoicmljaHdvb2QiLCJhIjoiY2lscGJwcjZlMDAzbnk2bTAydDk4bzQ5ayJ9.mkDGtvQvg1SKYi0xanRBXQ';
     var map = new mapboxgl.Map({
       container: 'map',
-      style: theme[1].styleName,
+      style: theme[currentTheme].styleName,
       center: [106.705755,10.738909],
       zoom: 15.8,
       pitch: 45, // pitch in degrees
@@ -216,12 +217,12 @@
   inputs[2].addEventListener("click", function(){switchLayer(2); }, {once:false, passive:false});
 
   function switchLayer(idx) {
-      // var layerId = layer.target.id;
       var layerId = theme[idx].styleName;
-      map.setStyle(layerId);
+      if (idx != currentTheme) map.setStyle(layerId);
       document.body.className = theme[idx].name;
-      console.log(theme[idx].name + ' selected');
+      // console.log(theme[idx].name + ' selected');
       document.querySelector('div#typeMenu').style.display = 'none';
+      currentTheme = idx;
   }
 
 </script>
