@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'Asterisk';
   src: url("../font/Asterisk.ttf?97x92f") format("truetype");
@@ -16,6 +17,12 @@
 @font-face {
   font-family: 'PexicoMicro';
   src: url("../font/PexicoMicro.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Bellerose';
+  src: url("../font/Bellerose.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
@@ -89,6 +96,7 @@ body {
     padding: 10px; }
   body div#typeMenu {
     display: none;
+    cursor: url(../img/close.ico) 32 32, auto;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -113,7 +121,8 @@ body {
       background-color: #232323; }
       body div#typeMenu > div.innocentBG > div.fixedBigImage {
         width: 100%;
-        height: 100%; }
+        height: 100%;
+        padding-top: 13%; }
         body div#typeMenu > div.innocentBG > div.fixedBigImage div.typeMapMenu {
           background-position: 50% 50%;
           background-size: cover;
@@ -125,16 +134,16 @@ body {
           justify-content: space-between;
           align-items: flex-start;
           width: 70%;
+          height: 60%;
           max-width: 1000px;
-          margin: 0 auto;
-          padding-top: 13%; }
+          margin: 0 auto; }
           body div#typeMenu > div.innocentBG > div.fixedBigImage div.typeMapMenu:hover > div {
             opacity: 0.3; }
             body div#typeMenu > div.innocentBG > div.fixedBigImage div.typeMapMenu:hover > div h3 {
               opacity: 0.2; }
           body div#typeMenu > div.innocentBG > div.fixedBigImage div.typeMapMenu > div {
             cursor: pointer;
-            height: 60%;
+            height: 100%;
             width: 30%;
             margin-right: 12px;
             flex-grow: 1;
@@ -143,11 +152,13 @@ body {
             background-position: 50% 50%;
             background-size: cover;
             background-attachment: fixed;
-            background-repeat: no-repeat; }
+            background-repeat: no-repeat;
+            border: 2px solid transparent; }
             body div#typeMenu > div.innocentBG > div.fixedBigImage div.typeMapMenu > div:hover {
-              opacity: 1; }
+              opacity: 1;
+              border: 2px solid #FFF; }
               body div#typeMenu > div.innocentBG > div.fixedBigImage div.typeMapMenu > div:hover h3 {
-                opacity: 11; }
+                opacity: 1; }
             body div#typeMenu > div.innocentBG > div.fixedBigImage div.typeMapMenu > div h3 {
               margin: 0;
               padding: 12px 10px 10px;
@@ -188,6 +199,47 @@ body {
             -webkit-animation-fill-mode: both;
             /* Safari 4.0 - 8.0 */
             animation-fill-mode: both; }
+  body.chic div#menu button {
+    color: transparent;
+    background-image: url(../img/ChicMenu.svg);
+    width: 100px;
+    height: 56px;
+    background-size: 100% auto;
+    display: inline-block;
+    content: '';
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: 0;
+    background-color: rgba(69, 69, 69, 0.7); }
+  body.chic .mapboxgl-popup {
+    font-family: "Ubuntu", "Open Sans", "Helvetica Neue", "Droid Sans Serif", "Roboto", Arial, sans-serif;
+    max-width: 400px;
+    color: #FFF; }
+    body.chic .mapboxgl-popup-content {
+      background: #454545 url(../img/Chic_angle.svg) 16px 16px/120px auto no-repeat;
+      padding: 45px 39px;
+      border-radius: 0; }
+      body.chic .mapboxgl-popup-content h3, body.chic .mapboxgl-popup-content > p {
+        color: #FFF;
+        margin: 3px 0;
+        display: block; }
+      body.chic .mapboxgl-popup-content h3 {
+        font-family: 'Bellerose';
+        font-size: 23px; }
+      body.chic .mapboxgl-popup-content > p small:before {
+        content: '– '; }
+    body.chic .mapboxgl-popup-close-button {
+      font-size: 20px;
+      color: #000; }
+    body.chic .mapboxgl-popup-anchor-bottom > div {
+      transform: translateY(-60px); }
+      body.chic .mapboxgl-popup-anchor-bottom > div.mapboxgl-popup-tip {
+        border-top-color: #454545; }
+    body.chic .mapboxgl-popup-anchor-top > div {
+      transform: translateY(60px); }
+      body.chic .mapboxgl-popup-anchor-top > div.mapboxgl-popup-tip {
+        border-bottom-color: #454545; }
   body.underground div#menu button {
     background: #FFF;
     border: 0;
@@ -209,10 +261,13 @@ body {
         background-color: #111;
         color: #FFF;
         padding: 4px;
-        margin: 3px 0; }
+        margin: 3px 0;
+        display: block; }
       body.underground .mapboxgl-popup-content h3 {
         font-family: "PexicoMicro", consolas, "DejaVu Sans Mono", courier, monospace;
         font-size: 23px;
+        display: inline-block; }
+      body.underground .mapboxgl-popup-content > p:last-child {
         display: inline-block; }
     body.underground .mapboxgl-popup-close-button {
       background-color: #96E1E6;
@@ -245,47 +300,47 @@ body {
 
 @keyframes noise-anim {
   0% {
-    clip: rect(63px, 9999px, 13px, 0); }
+    clip: rect(42px, 9999px, 73px, 0); }
   5% {
-    clip: rect(29px, 9999px, 4px, 0); }
+    clip: rect(12px, 9999px, 83px, 0); }
   10% {
-    clip: rect(92px, 9999px, 3px, 0); }
+    clip: rect(4px, 9999px, 5px, 0); }
   15% {
-    clip: rect(61px, 9999px, 90px, 0); }
+    clip: rect(14px, 9999px, 97px, 0); }
   20% {
-    clip: rect(75px, 9999px, 41px, 0); }
+    clip: rect(40px, 9999px, 5px, 0); }
   25% {
-    clip: rect(80px, 9999px, 36px, 0); }
+    clip: rect(14px, 9999px, 67px, 0); }
   30% {
-    clip: rect(77px, 9999px, 36px, 0); }
+    clip: rect(61px, 9999px, 22px, 0); }
   35% {
-    clip: rect(64px, 9999px, 15px, 0); }
+    clip: rect(3px, 9999px, 26px, 0); }
   40% {
-    clip: rect(38px, 9999px, 37px, 0); }
+    clip: rect(31px, 9999px, 44px, 0); }
   45% {
-    clip: rect(66px, 9999px, 2px, 0); }
+    clip: rect(89px, 9999px, 67px, 0); }
   50% {
-    clip: rect(1px, 9999px, 19px, 0); }
+    clip: rect(45px, 9999px, 9px, 0); }
   55% {
-    clip: rect(85px, 9999px, 27px, 0); }
+    clip: rect(41px, 9999px, 38px, 0); }
   60% {
-    clip: rect(39px, 9999px, 61px, 0); }
+    clip: rect(47px, 9999px, 72px, 0); }
   65% {
-    clip: rect(38px, 9999px, 25px, 0); }
+    clip: rect(56px, 9999px, 13px, 0); }
   70% {
-    clip: rect(92px, 9999px, 13px, 0); }
+    clip: rect(45px, 9999px, 25px, 0); }
   75% {
-    clip: rect(39px, 9999px, 99px, 0); }
+    clip: rect(12px, 9999px, 42px, 0); }
   80% {
-    clip: rect(49px, 9999px, 75px, 0); }
+    clip: rect(42px, 9999px, 53px, 0); }
   85% {
-    clip: rect(6px, 9999px, 48px, 0); }
+    clip: rect(31px, 9999px, 65px, 0); }
   90% {
-    clip: rect(61px, 9999px, 81px, 0); }
+    clip: rect(51px, 9999px, 69px, 0); }
   95% {
-    clip: rect(47px, 9999px, 10px, 0); }
+    clip: rect(14px, 9999px, 74px, 0); }
   100% {
-    clip: rect(51px, 9999px, 20px, 0); } }
+    clip: rect(19px, 9999px, 48px, 0); } }
     body.underground .well .glitch:after {
       content: attr(data-text);
       position: absolute;
@@ -300,47 +355,47 @@ body {
 
 @keyframes noise-anim-2 {
   0% {
-    clip: rect(30px, 9999px, 93px, 0); }
+    clip: rect(55px, 9999px, 38px, 0); }
   5% {
-    clip: rect(96px, 9999px, 4px, 0); }
+    clip: rect(61px, 9999px, 72px, 0); }
   10% {
-    clip: rect(52px, 9999px, 30px, 0); }
+    clip: rect(38px, 9999px, 54px, 0); }
   15% {
-    clip: rect(14px, 9999px, 44px, 0); }
+    clip: rect(94px, 9999px, 36px, 0); }
   20% {
-    clip: rect(58px, 9999px, 70px, 0); }
+    clip: rect(33px, 9999px, 17px, 0); }
   25% {
-    clip: rect(24px, 9999px, 58px, 0); }
+    clip: rect(45px, 9999px, 80px, 0); }
   30% {
-    clip: rect(87px, 9999px, 56px, 0); }
+    clip: rect(59px, 9999px, 97px, 0); }
   35% {
-    clip: rect(81px, 9999px, 47px, 0); }
+    clip: rect(79px, 9999px, 69px, 0); }
   40% {
-    clip: rect(37px, 9999px, 36px, 0); }
+    clip: rect(99px, 9999px, 14px, 0); }
   45% {
-    clip: rect(6px, 9999px, 81px, 0); }
+    clip: rect(100px, 9999px, 18px, 0); }
   50% {
-    clip: rect(94px, 9999px, 92px, 0); }
+    clip: rect(15px, 9999px, 74px, 0); }
   55% {
-    clip: rect(92px, 9999px, 15px, 0); }
+    clip: rect(86px, 9999px, 58px, 0); }
   60% {
-    clip: rect(39px, 9999px, 58px, 0); }
+    clip: rect(56px, 9999px, 94px, 0); }
   65% {
-    clip: rect(84px, 9999px, 39px, 0); }
+    clip: rect(59px, 9999px, 72px, 0); }
   70% {
-    clip: rect(51px, 9999px, 44px, 0); }
+    clip: rect(85px, 9999px, 28px, 0); }
   75% {
-    clip: rect(32px, 9999px, 89px, 0); }
+    clip: rect(44px, 9999px, 43px, 0); }
   80% {
-    clip: rect(17px, 9999px, 53px, 0); }
+    clip: rect(74px, 9999px, 58px, 0); }
   85% {
-    clip: rect(25px, 9999px, 47px, 0); }
+    clip: rect(76px, 9999px, 74px, 0); }
   90% {
-    clip: rect(55px, 9999px, 68px, 0); }
+    clip: rect(68px, 9999px, 19px, 0); }
   95% {
-    clip: rect(37px, 9999px, 76px, 0); }
+    clip: rect(29px, 9999px, 12px, 0); }
   100% {
-    clip: rect(20px, 9999px, 41px, 0); } }
+    clip: rect(3px, 9999px, 86px, 0); } }
     body.underground .well .glitch:before {
       content: attr(data-text);
       position: absolute;

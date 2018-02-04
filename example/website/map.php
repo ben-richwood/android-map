@@ -77,9 +77,9 @@
     <div class="innocentBG">
       <div class="fixedBigImage">
         <div class="typeMapMenu">
-          <div class="typeMapMenu-left"><h3>Chic</h3></div>
+          <div class="typeMapMenu-left"><h3>Exploring</h3></div>
           <div class="typeMapMenu-center"><h3>Underground</h3></div>
-          <div class="typeMapMenu-right"><h3>Exploring</h3></div>
+          <div class="typeMapMenu-right"><h3>Chic</h3></div>
         </div>
       </div>
     </div>
@@ -101,6 +101,7 @@
       },
     ];
     const inputs = document.querySelectorAll('div.typeMapMenu > div');
+    const menuType = document.querySelector('div#typeMenu');
     const MENU = document.querySelector('div#menu button');
     let currentTheme = 1;
 
@@ -211,6 +212,8 @@
     // inputs[i].addEventListener("click", function(){ console.log(i); switchLayer(i); }, {once:false, passive:false});
   }
   MENU.addEventListener("click", function(){ document.querySelector('div#typeMenu').style.display = 'block';}, {once:false, passive:false});
+
+  menuType.addEventListener("click", function(){ document.querySelector('div#typeMenu').style.display = 'none'; }, {once:false, passive:false});
 
   inputs[0].addEventListener("click", function(){ switchLayer(0); }, {once:false, passive:false});
   inputs[1].addEventListener("click", function(){switchLayer(1); }, {once:false, passive:false});

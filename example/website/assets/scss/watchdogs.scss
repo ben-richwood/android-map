@@ -28,6 +28,14 @@ $font-ava: 'avaFont', $font-title;
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'Bellerose';
+	src:  url('../font/Bellerose.ttf') format("truetype");
+	      // url('../font/PexicoMicro.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
 body{
 	/****************************
 	*        BOOTSTRAP style
@@ -126,6 +134,7 @@ body{
 	}
 	div#typeMenu{
 		display:none;
+		cursor: url(../img/close.ico) 32 32, auto;
 		position:absolute;
 		top:0;bottom:0;left:0;right:0;
 		width:100%; height:100%;
@@ -144,10 +153,10 @@ body{
 		& > div.innocentBG{
 			width:100%; height:100%;
 			overflow: hidden;
-			// cursor: 'click_to_close';
 			background-color: #232323;
 			& > div.fixedBigImage{
 				width:100%; height:100%;
+				padding-top: 13%;
 				// background: url(../img/view-underground.png) 50% 50% / cover fixed no-repeat;
 
 				// transform: scale(1.2);
@@ -170,16 +179,16 @@ body{
 					align-items: flex-start;
 
 					width: 70%;
+					height: 60%;
 					max-width: 1000px;
 					margin: 0 auto;
-					padding-top: 13%;
 					&:hover > div{
 						opacity:0.3;
 						h3{ opacity:0.2; }
 					}
 					& > div{
 						cursor: pointer;
-						height: 60%;
+						height: 100%;
 						width:30%;
 						margin-right: 12px;
 						// transform: translateY(12%);
@@ -190,7 +199,12 @@ body{
 						background-size: cover;
 						background-attachment: fixed;
 						background-repeat: no-repeat;
-						&:hover{opacity:1; h3{ opacity:11;} }
+						border: 2px solid transparent;
+						&:hover{
+							opacity:1;
+							border: 2px solid #FFF;
+							h3{ opacity:1;}
+						}
 						h3{
 							margin:0;
 							padding:12px 10px 10px;
@@ -240,7 +254,75 @@ body{
 			}
 		}
 	}
-	
+	&.chic{
+		div#menu{
+			// &:before{
+			button{
+				color:transparent;
+				background-image: url(../img/ChicMenu.svg);
+				width: 100px;
+				height: 56px;
+				background-size: 100% auto;
+				display: inline-block;
+				content: '';
+				background-position: 0 0;
+				background-repeat: no-repeat;
+				cursor:pointer;
+				border: 0;
+				background-color: rgba(69,69,69,0.7);
+			}
+		}
+
+		.mapboxgl-popup{
+			font-family: $font-title;
+			max-width: 400px;
+			color:#FFF;
+			&-content{
+				background: #454545 url(../img/Chic_angle.svg) 16px 16px /120px auto no-repeat;
+				padding: 45px 39px;
+				// border-left: 1px solid #FFF;
+				border-radius: 0;
+				// background-color: transparent;
+				// transform: translate(51%, 0);
+				h3, & > p{
+					// background-color: #111;
+					color: #FFF;
+					// padding:4px;
+					margin: 3px 0;
+					display: block;
+				}
+				h3{
+					font-family: 'Bellerose';
+					font-size: 23px;
+					// display: inline-block;
+				}
+				& > p small:before{
+					content: '– ';
+				}
+			}
+			&-close-button{
+				font-size: 20px;
+				color: #000;
+				// background-color: #96E1E6;
+				// height: 20px;
+				// width: 20px;
+				// transform: translate(-10px, -22px);
+				// border-radius: 0;
+			}
+			&-anchor-bottom > div{
+				transform: translateY(-60px);
+				&.mapboxgl-popup-tip{
+					border-top-color: #454545;
+				}
+			}
+			&-anchor-top > div{
+				transform: translateY(60px);
+				&.mapboxgl-popup-tip{
+					border-bottom-color: #454545;
+				}
+			}
+		}
+	}
 	&.underground{
 		div#menu{
 			button{
@@ -267,11 +349,15 @@ body{
 					color: #FFF;
 					padding:4px;
 					margin: 3px 0;
+					display: block;
 				}
 				h3{
 					font-family: $font-monospace;
 					font-size: 23px;
 					display: inline-block;
+				}
+				& > p:last-child{
+					display:inline-block;
 				}
 			}
 			&-close-button{
